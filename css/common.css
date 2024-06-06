@@ -13,3 +13,45 @@ body {
   line-height: 1.5;
 }
 
+.styled-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.styled-list li {
+  border: 1px solid #ccc;
+  margin: 5px 0;
+  padding: 10px;
+  max-width: 392px;
+  border-radius: 4px;
+  background-color: #f4f4fd;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.styled-list h2 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+#boxes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#boxes div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+}

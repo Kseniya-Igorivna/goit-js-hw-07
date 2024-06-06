@@ -4,60 +4,39 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const controls = document.querySelector('#controls');
-    const input = controls.querySelector('input[type="number"]');
-    const createButton = controls.querySelector('button[data-create]');
-    const destroyButton = controls.querySelector('button[data-destroy]');
-    const boxesContainer = document.querySelector('#boxes');
+const input = document.querySelector('#controls input');
+        const createBtn = document.querySelector('[data-create]');
+        const destroyBtn = document.querySelector('[data-destroy]');
+        const boxesContainer = document.getElementById('boxes');
 
-    function createBoxes(amount) {
-      destroyBoxes();
-      const boxElements = [];
-      let size = 30;
+        createBtn.addEventListener('click', () => {
+            const amount = parseInt(input.value);
+            if (amount >= 1 && amount <= 100) {
+                createBoxes(amount);
+                input.value = '';
+            }
+        });
 
-      for (let i = 0; i < amount; i++) {
-        const box = document.createElement('div');
-        box.style.width = `${size}px`;
-        box.style.height = `${size}px`;
-        box.style.backgroundColor = getRandomHexColor();
-        box.textContent = i + 1;
-        boxElements.push(box);
-        size += 10;
-      }
+        destroyBtn.addEventListener('click', destroyBoxes);
 
-      boxesContainer.append(...boxElements);
-    }
+        function createBoxes(amount) {
+            destroyBoxes(); // Удаляем предыдущие элементы
+            const boxSize = 30;
+            const fragment = document.createDocumentFragment();
 
-    function destroyBoxes() {
-      boxesContainer.innerHTML = '';
-    }
+            for (let i = 0; i < amount; i++) {
+                const box = document.createElement('div');
+                const size = boxSize + i * 10;
+                box.style.width = `${size}px`;
+                box.style.height = `${size}px`;
+                box.style.backgroundColor = getRandomHexColor();
+                box.textContent = i + 1; // Добавляем номер квадрата для удобства
+                fragment.appendChild(box);
+            }
 
-    createButton.addEventListener('click', () => {
-      const amount = parseInt(input.value.trim());
-      if (amount >= 1 && amount <= 100) {
-        createBoxes(amount);
-        input.value = '';
-      } else {
-        alert('Please enter a number between 1 and 100');
-      }
-    });
+            boxesContainer.appendChild(fragment);
+        }
 
-    destroyButton.addEventListener('click', () => {
-      destroyBoxes();
-    });
-    const style = document.createElement('style');
-style.textContent =
-#boxes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-#boxes div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-}
-document.head.appendChild(style);
+        function destroyBoxes() {
+            boxesContainer.innerHTML = '';
+        }
