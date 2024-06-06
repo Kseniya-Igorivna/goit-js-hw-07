@@ -1,4 +1,6 @@
 
+
+
 document.querySelector('.login-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -16,6 +18,10 @@ document.querySelector('.login-form').addEventListener('submit', function(event)
     password: password
     };
 
+
     console.log(formData);
     form.reset();
-    });
+});
+
+
+
