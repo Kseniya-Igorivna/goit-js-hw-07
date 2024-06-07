@@ -56,13 +56,23 @@ body {
   text-align: center;
 }
 
-input {
+.input4 {
   padding: 10px;
   font-size: 16px;
   margin-bottom: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #000000;
   border-radius: 4px;
   display: flex;
+  fill: #ffffff;
+}
+.input4:hover {
+  border-color: #000000;
+  background-color: #ffffff;
+}
+
+.input4:focus {
+border: 1px solid #808080;
+  outline: none;
 }
 
 h1 {
@@ -76,12 +86,81 @@ h1 {
   align-items: flex-start;
   flex-direction: column;
 }
-button{
+.btn-log{
+  cursor: pointer;
+    background: #4e75ff;
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    min-width: 86px;
+    height: 40px;
+    border: none;
+}
+.btn-log:hover {
+  background-color: #6c8cff;
+}
+
+.change-color{
+  cursor: pointer;
   background: #4e75ff;
-  border-radius: 8px;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: #FFFFFF;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  min-width: 148px;
+  height: 40px;
+  border: none;
 }
+
+/* .input6 {
+  border: 1px solid #808080;
+  border-radius: 8px;
+  width: 150px;
+  height: 40px;
+}
+
+.btn-cr {
+  cursor: pointer;
+  background: #4e75ff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  min-width: 120px;
+  height: 40px;
+  border: none;
+}
+
+.btn-des {
+  cursor: pointer;
+  background: #ff4e4e;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  min-width: 120px;
+  height: 40px;
+  border: none;
+}
+.btn-des:hover {
+  border: 1px solid #ff7070;
+} */
